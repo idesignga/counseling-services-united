@@ -1,0 +1,107 @@
+---
+title: "About | iDesign Demo | CSU"
+description: "Meta description for the page"
+permalink: "/about/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-310">
+    <div class="cs-container">
+        <span class="cs-int-title">About Us</span>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">Home</a>
+            <a href="/about/" class="cs-link cs-active">About Us</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+    </picture>
+</div>
+
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-677">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Main Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/about/donna.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/about/donna.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/about/donna.jpg" alt="landscape" width="562" height="568">
+            </picture>
+            <!--Pink Blob-->
+            <img class="cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fpink-blob.svg" alt="pink graphic" width="441" height="478">
+            <!--Flower Graphic-->
+            <img class="cs-graphic2" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2Fabstract-flower.svg" alt="abstract flower" width="267" height="130">
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Donna Cleveland Valentine</span>
+            <p>M.Ed., LPC, MAC, CPCS, Telemental Health Certified</p>
+            <h2 class="cs-title">A Founder with a <span class="cs-color">Passion for Peace</span></h2>
+            <p class="cs-text">
+                Donna Cleveland is from Toccoa, GA.  She attended Stephens County High School and was a church organist for about 10 years in her home town of Toccoa.  She played varsity basketball and was the pitcher and/or first baseman for the high school softball team.  She was also a member of the chorus while attending SCHS.  After high school, she attended Piedmont College and received her BA with a double major in Business Administration and Psychology.  She also received a music scholarship and traveled in a select choir that toured the United States.  She won awards in Music and Psychology, and she was on the Deans List a few times.  After obtaining her undergraduate degree, she attended West Georgia University for her Masters of Education (M.Ed.) degree in Guidance Counseling and her internship revolved around children with behavior issues
+            </p>
+            <p class="cs-text">
+                Several years later she attended Piedmont College again to obtain her Special Education certification, but realized her heart was in counseling.  Since 2009, she has been working with individuals and families to meet their interpersonal, financial, and mental health needs.  She has been told that working with families is her strengths, and she enjoys working with them.  Donna has a desire to strengthen individuals, couples, and families by helping them think for themselves in effort to make wise decisions based on future outcomes for themselves and family members.  Donna was also a short-term summer missionary one year and highly believes in the power of God and how he changes lives when humans can't do it alone.  She also believes communication changes lives and is the key to resolving relationships as well.
+            </p>
+            <div class="cs-contact-group">
+                <a class="cs-link" href="tel:555-555-0234">
+                    <picture class="cs-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fphone.svg" alt="icon" width="24" height="24">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-header">Call Now</span>
+                        <span class="cs-link-content">(470) 798-0244</span>
+                    </div>
+                </a>
+                <a class="cs-link" href="mailto:counselingservicesunited@gmail.com">
+                    <picture class="cs-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fmail.svg" alt="icon" width="24" height="24">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-header">Send A Message</span>
+                        <span class="cs-link-content">counselingservicesunited@gmail.com</span>
+                    </div>
+                </a>
+            </div>
+            <a href="" class="cs-button-solid" aria-label="learn more about us">Let's Get Started</a>
+        </div>
+    </div>
+    <!--Zen Leaf Group-->
+    <img class="cs-floater" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Fzen.png" alt="leaf and bowl" width="292" height="422">
+</section>
+                                
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

@@ -1,0 +1,225 @@
+---
+title: "Educational Services | iDesign Demo | CSU"
+description: "Meta description for the page"
+permalink: "/educational-services/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
+    <link rel="stylesheet" href="/assets/css/educational-services.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-310">
+    <div class="cs-container">
+        <span class="cs-int-title">About Us</span>
+        <div class="cs-breadcrumbs">
+            <a href="/" class="cs-link">Home</a>
+            <a href="/educational-services/" class="cs-link cs-active">Educational Services</a>
+        </div>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+    </picture>
+</div>
+
+<!-- ============================================ -->
+<!--               Side By Side                   -->
+<!-- ============================================ -->
+
+<section id="RTsbs-875">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Left Image-->
+            <picture class="cs-left-img">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/educational-services/youth-1.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/educational-services/youth-1.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/educational-services/youth-1.jpg" alt="therapy" width="439" height="560">
+            </picture>
+            <!--Right Image-->
+            <picture class="cs-right-img">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/educational-services/youth-2.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/educational-services/youth-2.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/educational-services/youth-2.jpg" alt="therapy" width="439" height="560">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Youth Education</span>
+            <h2 class="cs-title">Developing Coaching and Teaching Skills</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab dolores minima similique incidunt quisquam neque rem quae fugiat, officia, id rerum deserunt? Recusandae sit praesentium vero itaque quas ullam illo, nobis quos repellat optio veritatis perferendis doloremque consequuntur assumenda.
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    Social Skills
+                </li>
+                <li class="cs-li">
+                    Anxiety Education & Skill Building
+                </li>
+                <li class="cs-li">
+                    Anger & Stress Management
+                </li>
+                <li class="cs-li">
+                    Relationship Building Skills
+                </li>
+                <li class="cs-li">
+                    Overcoming Depression
+                </li>
+                <li class="cs-li">
+                    Low Self-Esteem
+                </li>
+                <li class="cs-li">
+                    Memorizing Bible Verses
+                </li>
+                <li class="cs-li">
+                    Goal Setting
+                </li>
+                <li class="cs-li">
+                    Life Skills
+                </li>
+                <li class="cs-li">
+                    Coaching for Change
+                </li>
+            </ul>
+            <a href="" class="cs-button-solid">Get Started</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--           Side By Side Reverse               -->
+<!-- ============================================ -->
+
+<section id="RTsbsr-875">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Adult Education</span>
+            <h2 class="cs-title">Developing Real Teaching Skills</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab dolores minima similique incidunt quisquam neque rem quae fugiat, officia, id rerum deserunt? Recusandae sit praesentium vero itaque quas ullam illo, nobis quos repellat optio veritatis perferendis doloremque consequuntur assumenda.
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    Parenting
+                </li>
+                <li class="cs-li">
+                    Anger Management
+                </li>
+                <li class="cs-li">
+                    Substance Abuse Education
+                </li>
+                <li class="cs-li">
+                    Money Management
+                </li>
+                <li class="cs-li">
+                    Memorizing Bible Verses
+                </li>
+                <li class="cs-li">
+                    Resume Building Skills
+                </li>
+                <li class="cs-li">
+                    Interview Skills
+                </li>
+                <li class="cs-li">
+                    Helping with signing up for Food Stamps & TANF
+                </li>
+                <li class="cs-li">
+                    Grit (teaching empowerment to go after self-employment dreams)
+                </li>
+            </ul>
+            <a href="" class="cs-button-solid">Get Started</a>
+        </div>
+        <div class="cs-image-group">
+            <!--Right Image-->
+            <picture class="cs-right-img">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/educational-services/adult-1.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/educational-services/adult-1.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/educational-services/adult-1.jpg" alt="therapy" width="439" height="560">
+            </picture>
+            <!--Left Image-->
+            <picture class="cs-left-img">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/educational-services/adult-2.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/educational-services/adult-2.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/educational-services/adult-2.jpg" alt="therapy" width="439" height="560">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--           Side By Side Triplet               -->
+<!-- ============================================ -->
+
+<section id="RTsbst-875">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Left Image-->
+            <picture class="cs-left-img">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/educational-services/clinical-1.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/educational-services/clinical-1.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/educational-services/clinical-1.jpg" alt="therapy" width="439" height="560">
+            </picture>
+            <!--Right Image-->
+            <picture class="cs-right-img">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/educational-services/clinical-2.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/educational-services/clinical-2.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/educational-services/clinical-2.jpg" alt="therapy" width="439" height="560">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">and More!</span>
+            <h2 class="cs-title">Clinical Supervision & Classes for CEUs</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab dolores minima similique incidunt quisquam neque rem quae fugiat, officia, id rerum deserunt? Recusandae sit praesentium vero itaque quas ullam illo, nobis quos repellat optio veritatis perferendis doloremque consequuntur assumenda.
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    Individual
+                </li>
+                <li class="cs-li">
+                    Group (up to 6)
+                </li>
+            </ul>
+            <a href="" class="cs-button-solid">Get Started</a>
+        </div>
+    </div>
+</section>
+                                
+                                
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

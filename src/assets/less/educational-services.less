@@ -1,0 +1,302 @@
+/*-- -------------------------- -->
+<---       Side By Side         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #RTsbs-875,
+    #RTsbsr-875,
+    #RTsbst-875 {
+        padding: var(--sectionPadding);
+        /* clips overlapping cs-image-group */
+        overflow: hidden;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+            position: relative;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (522/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-title {
+            /* 20 characters wide including spaces */
+            max-width: 20ch;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-ul {
+            margin: 0 0 (32/16rem) 0;
+            padding: 0;
+            columns: 2;
+        }
+
+        .cs-li {
+            list-style: none;
+            margin: 0 0 (8/16rem) 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: (12/16rem);
+            position: relative;
+
+            &:before {
+                /* accent shape */
+                content: "";
+                width: (8/16rem);
+                height: (8/16rem);
+                margin-top: (8/16rem);
+                background: #bababa;
+                border-radius: (4/16rem) 0 (4/16rem) 0;
+                display: block;
+                /* prevents flexbox from squishing it */
+                flex: none;
+            }
+        }
+
+        .cs-image-group {
+            /* using ems so we can scale the whole section using a font size min/max. Font size (.61em) max changes at desktop */
+            font-size: ~"min(1.61vw, .61em)";
+            width: (898/16em);
+            height: (814/16em);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+
+            &:before {
+                /* accent shape */
+                content: "";
+                width: (299/16em);
+                height: (234/16em);
+                background: #fbcebd;
+                border-radius: (100/16em) 0 (100/16em) 0;
+                opacity: 1;
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: (140/16em);
+            }
+        }
+
+        .cs-left-img {
+            width: (439/16em);
+            height: (560/16em);
+            border-radius: 0 (200/16em) 0 (200/16em);
+            /* clips img corners */
+            overflow: hidden;
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cs-right-img {
+            width: (439/16em);
+            height: (560/16em);
+            border-radius: (200/16em) 0 (200/16em) 0;
+            /* clips img corners */
+            overflow: hidden;
+            display: block;
+            transform: translateY(6.25em);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #RTsbs-875,
+    #RTsbsr-875,
+    #RTsbst-875 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cs-image-group {
+            font-size: ~"min(.8vw, 1em)";
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+    }
+}
+
+/* Large Desktop 1500px */
+@media only screen and (min-width: 93.75rem) {
+    #RTsbs-875,
+    #RTsbsr-875,
+    #RTsbst-875 {
+        .cs-image-group {
+            font-size: inherit;
+            /* The cs-image-group is actually REALLY big. It's so big, the design has it overlapping the normal 1280px container by 220px.  This is just a design choice that "breaks" the container and creates a more dynamic design and website. */
+            transform: translateX(-12.75rem);
+        }
+
+        .cs-content {
+            /* we absolutely position the cs-content so the cs-image-group can remain position relative and dictate the height of the section. Since the cs-content is smaller in height, if it remained relative then the height of the container would only be as tall as the .cs-content and the absolutely positioned cs-image-group would overlap into the top and bottom neighboring sections. */
+            flex: none;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #RTsbs-875,
+        #RTsbsr-875,
+        #RTsbst-875 {
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+            .cs-title,
+            .cs-text,
+            .cs-li {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text,
+            .cs-li {
+                opacity: 0.8;
+            }
+
+            .cs-image-group {
+                &:before {
+                    opacity: 0.3;
+                }
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #RTsbsr-875 {
+        background-color: #fef7f4;
+
+        .cs-image-group {
+            &:before {
+                border-radius: 0 (100/16em) 0 (100/16em);
+                left: (459/16em);
+            }
+        }
+
+        .cs-left-img {
+            border-radius: (200/16em) 0 (200/16em) 0;
+        }
+
+        .cs-right-img {
+            border-radius: 0 (200/16em) 0 (200/16em);
+            transform: translateY(6.25em);
+        }
+    }
+}
+
+/* Large Desktop 1500px */
+@media only screen and (min-width: 93.75rem) {
+    #RTsbsr-875 {
+        .cs-container {
+            justify-content: flex-end;
+        }
+
+        .cs-image-group {
+            transform: translateX(13.75rem);
+        }
+
+        .cs-content {
+            /* reset the right value so it doesn't affect the left value */
+            right: auto;
+            left: 0;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #RTsbsr-875 {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+                                

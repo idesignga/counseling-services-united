@@ -1,0 +1,376 @@
+---
+title: "Family Counseling Services | iDesign Demo | CSU"
+description: "Meta description for the page"
+permalink: "/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Critical styles are loaded first -->
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+    {% if kit.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+
+    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+    <!-- {% include "components/home-schema.html" %} -->
+{% endblock %}
+
+{% block body %}
+
+<!-- Usage Notes:
+We made this stitch to overlap the section below it, so if there's a patterned texture or image background on the next section below, it will overlap on top of it. Other Stitches like this would have a white gap between the cards an the next section. In order to make Stitches like this work, we need to add a padding top on the section below it to counteract the overlap. 
+
+ON MOBILE (360px): add padding-top: (654/16rem); using LESS, or padding-top: calc(654 / 16 * 1rem); if you're using SCSS, or padding-top: 40.875rem; if you're just using vanilla CSS.
+
+ON TABLET (768px): Reset to padding-top: (230/16rem); using LESS, padding-top: calc(230 / 16 * 1rem) for SCSS or padding-top: 15.625rem; for CSS
+
+Doing this will complete the overlapping "breaking the container" look.
+-->
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-1250">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">A Mission of <br /> Peace & Happiness</h1>
+            <p class="cs-text">
+                Improving family life, knowledge, and understanding.
+            </p>
+            <a href="" class="cs-button-solid">Find a Counselor</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <h3 class="cs-h3">Individual Counseling</h3>
+                    <p class="cs-item-text">
+                        We offer confidential assessments, professional diagnosis', treatment   plans, and private sessions  that focus on your peace of mind, happiness, and personal goals in life.
+                    </p>
+                </a>
+                <picture class="cs-item-background">
+                    <source media="(max-width: 600px)" srcset="assets/images/individual-counseling.jpg">
+                    <source media="(min-width: 601px)" srcset="assets/images/individual-counseling.jpg">
+                    <img decoding="async" src="assets/images/individual-counseling.jpg" alt="construction" width="413" height="374" aria-hidden="true">
+                </picture>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <h3 class="cs-h3">Couples Counseling</h3>
+                    <p class="cs-item-text">
+                        Focused on "Getting the Love that YOU diserve out of the Relationship".  Rekindle love while targeting problem spots, forgiving each other, and remembering the good ole' days.
+                    </p>
+                </a>
+                <picture class="cs-item-background">
+                    <source media="(max-width: 600px)" srcset="assets/images/couples-counseling.jpg">
+                    <source media="(min-width: 601px)" srcset="assets/images/couples-counseling.jpg">
+                    <img decoding="async" src="assets/images/couples-counseling.jpg" alt="construction" width="413" height="374" aria-hidden="true">
+                </picture>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <h3 class="cs-h3">Family Therapy</h3>
+                    <p class="cs-item-text">
+                        Strategic focus on love and communication as keys to bringing families together as they heal from broken hearts, hurt feelings, and deep wounds of the past.
+                    </p>
+                </a>
+                <picture class="cs-item-background">
+                    <source media="(max-width: 600px)" srcset="assets/images/family-counseling.jpg">
+                    <source media="(min-width: 601px)" srcset="assets/images/family-counseling.jpg">
+                    <img decoding="async" src="assets/images/family-counseling.jpg" alt="construction" width="413" height="374" aria-hidden="true">
+                </picture>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <h3 class="cs-h3">Counseling & Education for All Ages</h3>
+                    <!-- <p class="cs-item-text">
+                        We’ve helped thousands of organizations transform to become relevant of helped thousands.
+                    </p> -->
+                </a>
+                <picture class="cs-item-background">
+                    <source media="(max-width: 600px)" srcset="assets/images/counseling-class.jpg">
+                    <source media="(min-width: 601px)" srcset="assets/images/counseling-class.jpg">
+                    <img decoding="async" src="assets/images/counseling-class.jpg" alt="construction" width="413" height="374" aria-hidden="true">
+                </picture>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Background Image, there's a background image in the CSS for the parallax effect you'll need to change as well if you swap out our images -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="assets/images/family-hero.jpg">
+        <source media="(min-width: 601px)" srcset="assets/images/family-hero.jpg">
+        <img decoding="async" src="assets/images/family-hero.jpg" alt="construction" width="2250" height="1500" aria-hidden="true">
+    </picture>
+</section>                          
+                                
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs-2369">
+    <div class="cs-wrapper">
+        <p class="cs-header">
+            At Counseling Services United, we know that nothing is more important than family, peace, and happiness. We are dedicated to our mission of improving your family life through compassion-focused counseling and family education.
+        </p>
+        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/curve-arrow.svg" alt="arrow graphic" width="154" height="120">
+    </div>
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Main Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png" alt="therapist" width="565" height="814">
+            </picture>
+            <img class="cs-flower" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/flower-blur.svg" alt="flower blur" width="635" height="697">
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Who We Are</span>
+            <h2 class="cs-title">Transforming Therapy, Elevating Families</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit esse deleniti recusandae suscipit voluptatum eveniet provident repudiandae, sequi cum ipsa incidunt quisquam ipsam? Temporibus nihil eligendi illum quos tempora delectus inventore dolore repudiandae perspiciatis voluptatum, adipisci placeat, ducimus dolorem consequuntur?
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                    More than 15 Years Experience
+                </li>
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                    All counselors fully licensed/certified
+                </li>
+                <li class="cs-li">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                    Fact-based and Faith-based
+                </li>
+            </ul>
+            <a href="/about" class="cs-button-solid">About Our Founder</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-2014">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">How We Work</span>
+            <h2 class="cs-title">Services for the Whole Family</h2>
+            <p class="cs-text">
+                Orci eu lobortis elementum nibh  tellus. Vulputate eu scelerisque felis imperdiet proin fermentum leo  vel. Luctus accumsan tortor posuere ac ut consequat semper. Et pharetra  pharetra massa massa ultricies mi quis.
+            </p>
+            <a class="cs-button-solid" href="">Our Services</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <h3 class="cs-h3">Find Your Coverage</h3>
+                <p class="cs-item-text">
+                    Search our coverage map to see what you're eligible for. Select your state and city, and then enter your information.
+                </p>
+                <div class="cs-number-wrapper">
+                    <span class="cs-number">01</span>
+                </div>
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="assets/images/map.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="assets/images/map.jpg">
+                    <img loading="lazy" decoding="async" src="assets/images/map.jpg" alt="number" width="48" height="48">
+                </picture>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">Find Your Counselor</h3>
+                <p class="cs-item-text">
+                    Select from a broad list of certified counselors, each hand-picked and uniquely specialized to serve you and your family.
+                </p>
+                <div class="cs-number-wrapper">
+                    <span class="cs-number">02</span>
+                </div>
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="assets/images/search.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="assets/images/search.jpg">
+                    <img loading="lazy" decoding="async" src="assets/images/search.jpg" alt="number" width="48" height="48">
+                </picture>
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">Book Your Session</h3>
+                <p class="cs-item-text">
+                    Reach your counselor directly to book your very first session. Aren't satisfied with your first impression? No worries! Just go back and select from our list!
+                </p>
+                <div class="cs-number-wrapper">
+                    <span class="cs-number">03</span>
+                </div>
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="assets/images/appointment.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="assets/images/appointment.jpg">
+                    <img loading="lazy" decoding="async" src="assets/images/appointment.jpg" alt="number" width="48" height="48">
+                </picture>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Logos                      -->
+<!-- ============================================ -->
+
+<section id="logos-857">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Coverage</span>
+            <h2 class="cs-title">Use Your Insurance</h2>
+        </div>
+        <div class="cs-logo-group">
+            <!--Ideally you want to use svg's for the file path image, which is why these aren't wrapped in picture elements for different screen sizes-->
+            <img class="cs-logo" src="assets/images/insurance/achmea.png" alt="logo" width="150" height="65" loading="lazy" decoding="async">
+            <img class="cs-logo" src="assets/images/insurance/dhfl.png" alt="logo" width="150" height="55" loading="lazy" decoding="async">
+            <img class="cs-logo" src="assets/images/insurance/avrist.png" alt="logo" width="150" height="53" loading="lazy" decoding="async">
+            <img class="cs-logo" src="assets/images/insurance/exide.png" alt="logo" width="150" height="61" loading="lazy" decoding="async">
+            <img class="cs-logo" src="assets/images/insurance/freeway.png" alt="logo" width="150" height="65" loading="lazy" decoding="async">
+            <img class="cs-logo" src="assets/images/insurance/geico.png" alt="logo" width="150" height="55" loading="lazy" decoding="async">
+            <img class="cs-logo" src="assets/images/insurance/inpro.png" alt="logo" width="150" height="53" loading="lazy" decoding="async">
+            <img class="cs-logo" src="assets/images/insurance/liberty.png" alt="logo" width="150" height="61" loading="lazy" decoding="async">
+        </div>
+    </div>
+</section>
+                                
+
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+<section id="reviews-2385">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Still Not Convinced?</span>
+                <h2 class="cs-title">What Real Clients Are Saying</h2>
+            </div>
+            <a href="" class="cs-button-solid">View All Reviews</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <div class="cs-quote">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/quote-gold2.svg" decoding="async" alt="profile" width="30" height="24" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-header">
+                        Real Stories,<br> True Growth
+                    </span>
+                </div>
+                <p class="cs-review">
+                    “I’ve seen a huge shift in my mindset since starting with CSU. My therapist is insightful, warm, and truly listens.”
+                </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/profile1.jpg" decoding="async" alt="profile" width="50" height="50" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-name">
+                        Tiffany James
+                        <span class="cs-job">Student Athlete</span>
+                    </span>
+                </div>
+            </li>
+            <li class="cs-item">
+                <div class="cs-quote">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/quote-gold2.svg" decoding="async" alt="profile" width="30" height="24" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-header">
+                        Lives Are Being Transformed Here
+                    </span>
+                </div>
+                <p class="cs-review">
+                   For a man as busy as myself, the thought of taking time out of my day to attend family counseling seemed daunting. CSU made it easy! They worked with me to find space in my calendar, and now my family could never be more grateful.
+                </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/profile1.jpg" decoding="async" alt="profile" width="50" height="50" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-name">
+                        Monica Jones
+                        <span class="cs-job">Single Mom & CEO</span>
+                    </span>
+                </div>
+            </li>
+            <li class="cs-item">
+                <div class="cs-quote">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/quote-gold2.svg" decoding="async" alt="profile" width="30" height="24" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-header">
+                        Healing <br>That Lasts
+                    </span>
+                </div>
+                <p class="cs-review">
+                    "We came in unsure about couples therapy and left feeling stronger as a team. Our sessions have changed the way we relate to each other."
+                </p>
+                <div class="cs-flex-group">
+                    <picture class="cs-picture">
+                        <img class="cs-profile" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/profile1.jpg" decoding="async" alt="profile" width="50" height="50" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <span class="cs-name">
+                        Erik & Nina Bradley
+                        <span class="cs-job">Married 24 Years</span>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+                                
+<!-- ============================================ -->
+<!--                   Stats                      -->
+<!-- ============================================ -->        
+
+<div id="stats-2402">
+    <div class="cs-container">
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <span class="cs-number">100<span class="cs-small">%</span></span>
+                <span class="cs-header">Satisfaction Guaranteed</span>
+                <span class="cs-item-text">We stand behind our work.</span>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">100<span class="cs-small">%</span></span>
+                <span class="cs-header">Certified Counselors</span>
+                <span class="cs-item-text">Everyone we work with is fully qualified.</span>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">10<span class="cs-small">+</span></span>
+                <span class="cs-header">Years of Experience</span>
+                <span class="cs-item-text">A decade of trusted service.</span>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">5K<span class="cs-small">+</span></span>
+                <span class="cs-header">Happy Clients</span>
+                <span class="cs-item-text">Countless families helped.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+                                                                                                               
+
+    {% include 'sections/cta.html' %}
+{% endblock %}
